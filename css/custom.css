@@ -1,0 +1,197 @@
+/* Shared
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+body {
+    font-family: 'Hind Vadodara', sans-serif;
+}
+
+.button.button-primary {
+    background-color: #64b32c;
+    border-color: #64b32c;
+}
+
+.button.button-primary:hover {
+    background-color: #81c550;
+    border-color: #81c550;
+}
+
+.button {
+    width: 160px;
+    border-color: #64b32c;
+}
+
+.button:hover {
+    border-color: #81c550;
+}
+
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section {
+    padding: 8rem 0 7rem;
+    text-align: center;
+}
+
+
+/* Login
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.logo {
+    max-width: 180px;
+}
+
+.login {
+    background-color: #004799;
+    color: #fff;
+}
+
+.login .button {
+    margin-right: 8px;
+    color: #fff;
+}
+
+.login .button:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.phones {
+    position: relative;
+}
+
+.phone {
+    position: relative;
+    max-width: 80%;
+    margin: 3rem auto -12rem;
+}
+
+.login .button {
+    margin-right: 8px;
+}
+
+
+/* screenshots
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.screenshots {
+    background-color: #f5f5f5;
+}
+
+.screenshots .section-description {
+    margin-bottom: 4rem;
+}
+
+.screenshot {
+    max-width: 240px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+.second {
+    background-color: #fff;
+}
+
+
+/* Bigger than 550 */
+
+@media (min-width: 550px) {
+    .section {
+        padding: 12rem 0 11rem;
+    }
+    .hero {
+        padding-bottom: 12rem;
+        text-align: left;
+        height: 165px;
+    }
+    .login {
+        padding-bottom: 12rem;
+        text-align: center;
+        height: 165px;
+    }
+    .phone {
+        position: absolute;
+        top: -7rem;
+        max-height: 362px;
+        z-index: 3;
+    }
+    .login-heading {
+        font-size: 2.4rem;
+    }
+    .hero-heading {
+        font-size: 2.4rem;
+    }
+}
+
+
+/* Bigger than 750 */
+
+@media (min-width: 750px) {
+    .hero {
+        height: 190px;
+    }
+    .hero-heading {
+        font-size: 2.6rem;
+    }
+    .login {
+        height: 190px;
+    }
+    .login-heading {
+        font-size: 2.6rem;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section-description {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section {
+        padding: 14rem 0 15rem;
+    }
+    .login {
+        padding: 16rem 0 14rem;
+    }
+    .phone {
+        top: -14rem;
+        max-height: 510px;
+    }
+    .screenshots {
+        padding: 15rem 0 8rem;
+    }
+}
+
+
+/* Bigger than 1000 */
+
+@media (min-width: 1000px) {
+    .section {
+        padding: 16rem 0 15rem;
+    }
+    .hero {
+        padding: 22rem 0;
+    }
+    .hero-heading {
+        font-size: 3.0rem;
+    }
+    .login {
+        padding: 22rem 0;
+    }
+    .login-heading {
+        font-size: 3.0rem;
+    }
+    .phone {
+        top: -16rem;
+        max-height: 615px;
+    }
+    .left {
+        text-align: right;
+    }
+    .right {
+        text-align: left;
+    }
+}

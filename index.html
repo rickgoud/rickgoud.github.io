@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>TeleDE App</title>
+    <meta name="description" content="The TeleDE App">
+    <meta name="author" content="Dermicis">
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400,600" rel="stylesheet">
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicon-152.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon-144.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicon-120.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon-114.png">
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon-72.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-57.png"> 
+	<script type="text/javascript" src="ua-parser.min.js"></script>
+	</head>
+<script type="text/javascript">
+	function qs(search_for) {
+		var query = window.location.search.substring(1);
+		var parms = query.split('&');
+		for (var i=0; i<parms.length; i++) {
+			var pos = parms[i].indexOf('=');
+			if (pos > 0  && search_for == parms[i].substring(0,pos)) {
+				return parms[i].substring(pos+1);;
+			}
+		}
+		return "";
+	}
+	
+	function GoToTeleDeSignup()
+	{
+		document.getElementById("demo").innerHTML = "Paragraph changed.";
+	}
+		
+	function SetSignUpButtonText()
+	{
+		var signupURL = qs("zivverSignup");
+		if (signupURL)
+		{
+		document.getElementById("signupButton").href= signupURL;
+		document.getElementById("signupButton").text= "Activeer account";
+		document.getElementById("headerText").innerText= "Activeer direct je account, lees meer over TeleDE of voeg de App toe aan je beginscherm";
+		}
+		
+		var parser = new UAParser();
+		var uastring = navigator.userAgent;
+		parser.setUA(uastring);
+		var result = parser.getResult();
+		
+		if (result.device.type === "mobile" || result.device.type === "tablet")
+		{
+			if (result.os.name == "iOS")
+			{
+				document.getElementById('homescreen-android').style.display = 'none'; //Will hide			
+				document.getElementById('homescreen-desktop').style.display = 'none'; //Will hide			
+			}
+			else if (result.os.name == "Android")
+			{
+				document.getElementById('homescreen-iphone').style.display = 'none'; //Will hide			
+				document.getElementById('homescreen-desktop').style.display = 'none'; //Will hide			
+			}
+		}
+		else
+		{
+			document.getElementById('homescreen-iphone').style.display = 'none'; //Will hide			
+			document.getElementById('homescreen-android').style.display = 'none'; //Will hide			
+		}
+		
+	}
+	window.onload = SetSignUpButtonText;
+</script>
+
+<body>
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="section login" id="intro">
+        <div class="container">
+            <p><img class="logo" src="images/TeleDE_Logo_RGB_white.svg"></p>
+            <h4 class="login-heading"><span id="headerText">Snel en eenvoudig dermatologisch teleconsult met TeleDE2 <script type="text/javascript">navigator.userAgent</script></span></h4> <a class="button button-primary" style="width:200px" id="signupButton" onclick="GoToTeleDeSignup()">Login</a><a class="button" href="http://www.telede.nl">Lees meer</a> </div>
+    </div>
+    <div class="section screenshots" id="homescreen-iphone">
+        <div class="container">
+            <h3 class="section-heading">Voeg toe aan iPhone beginscherm</h3>
+            <p class="section-description">Druk op de "share" knop onderaan de browser. Kies voor "zet in beginscherm".</p>
+            <div class="row">
+                <div class="one-half column category left"> <img class="u-max-full-width screenshot " src="images/iphone_stap01.png"> </div>
+                <div class="one-half column category right"> <img class="u-max-full-width screenshot " src="images/iphone_stap02.png"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="section screenshots second" id="homescreen-android">
+        <div class="container">
+            <h3 class="section-heading">Voeg toe aan Android startscherm</h3>
+            <p class="section-description">Druk op de "meer" knop rechts naast de adresbalk. Kies voor "toevoegen aan startscherm"</p>
+            <div class="row">
+                <div class="one-half column category left"> <img class="u-max-full-width screenshot " src="images/android_stap01.png"> </div>
+                <div class="one-half column category right"> <img class="u-max-full-width screenshot " src="images/android_stap02.png"> </div>
+            </div>
+        </div>
+    </div>
+	<div class="section screenshots third" id="homescreen-desktop">
+        <div class="container">
+            <h3 class="section-heading">Voeg toe aan uw bureaublad</h3>
+            <p class="section-description">Druk op de "meer" knop rechts naast de adresbalk. Kies voor "toevoegen aan startscherm"</p>
+            <div class="row">
+                <div class="one-half column category left"> <img class="u-max-full-width screenshot " src="images/android_stap01.png"> </div>
+                <div class="one-half column category right"> <img class="u-max-full-width screenshot " src="images/android_stap02.png"> </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
